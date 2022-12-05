@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>My Maps</title>
+		<!-- Description, Keywords and Author -->
+		<meta name="description" content="Your description">
+		<meta name="keywords" content="Your,Keywords">
+		<meta name="author" content="ResponsiveWebInc">
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		<!-- Styles -->
+		<!-- Bootstrap CSS -->
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<!-- Font awesome CSS -->
+		<link href="css/font-awesome.min.css" rel="stylesheet">		
+		<!-- Custom CSS -->
+		<link href="css/style.css" rel="stylesheet">
+		
+		<!-- Favicon -->
+		<link rel="shortcut icon" href="img/map-5-16.png">
+
+
+		<!-- HERE JavaScript Libs & Style Sheets-->
+		<link rel="stylesheet" type="text/css" href="https://js.api.here.com/v3/3.1/mapsjs-ui.css" />
+		<script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-core.js"></script>
+		<script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-service.js"></script>
+		<script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-ui.js"></script>
+		<script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-mapevents.js"></script>
+		<!-- HERE JavaScript Libs & Style Sheets end-->
+		<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+		<script>
+		function enviar_ajax(){	
+		
+			$.ajax({
+			type: 'POST',
+			url: 'enviar.php',
+			data: $('#form1').serialize(),
+			success: function(respuesta) {
+				if(respuesta=='ok'){
+			swal("Datos enviados", "Muchas gracias!", "success");
+				}
+				else {
+				alert('Error en los datos.');
+				}
+			}
+			});
+		
+		  $('#form1')[0].reset();
+		}
+		</script>
+	</head>
+	
+	<body>
+	
+		<!-- wrapper -->
+		<div class="wrapper">
+			<!-- banner -->
+			<div class="banner">
+				<div class="container">
+					<!-- banner content -->
+					<div class="banner-content">
+						<!-- logo image -->
+						<a href="#"><img class="img-responsive" src="img/logo.png" alt="" /></a>
+						<!-- short paragraph -->
+						<p>Rutas exactas<br>Negocio visible</p>
+						<!-- button link -->
+						<a href="#" class="btn btn-info btn-lg">Iniciar</a>
+					</div>
+				</div>
+			</div>
+			
+			<!-- feature block -->
+			<div class="feature">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-4 col-sm-4">
+							<!-- feature item -->
+							<div class="feature-item">
+								<!-- icon -->
+								<i class="fa fa-map-marker" aria-hidden="true"></i>
+								<!-- heading -->
+								<h4>Google Maps</h4>
+								<p><a href="https://www.google.com/maps/" target="_blank">maps.google.com</a></p>
+							</br>
+								<!-- paragraph -->
+								<p>Google Maps es un servidor de aplicaciones de mapas en la web que ofrece imágenes de mapas desplazables, fotografías cartografiadas por satélite del mundo, así como rutas entre diferentes ubicaciones.</p>
+						</br>
+						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15722.876534867099!2d-85.52947643962072!3d9.873914587001506!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f9faa01e2091a3d%3A0x341f2d530bcc25b5!2sPlaya%20S%C3%A1mara!5e0!3m2!1ses!2scr!4v1637105652089!5m2!1ses!2scr" width="300" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+							</div>
+						</div>
+						<div class="col-md-4 col-sm-4">
+							<!-- feature item -->
+							<div class="feature-item">
+								<!-- icon -->
+								<i class="fa fa-map-marker"></i>
+								<!-- heading -->
+								<h4>Open Street Maps</h4>
+								<p><a href="https://www.openstreetmap.org/" target="_blank">openstreetmap.org</a></p>
+							</br>
+								<!-- paragraph -->
+								<p>OpenStreetMap (también conocido como OSM) es un proyecto colaborativo para crear mapas editables y libres. Los mapas se crean utilizando información geográfica capturada con dispositivos GPS móviles, ortofotografías y otras fuentes libres.</p>
+								</br>
+								<iframe width="300" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.openstreetmap.org/export/embed.html?bbox=-85.57946205139162%2C9.857330182316556%2C-85.48367500305177%2C9.9000320200596&amp;layer=mapnik" style="border: 0px solid black"></iframe><br/><small><a href="https://www.openstreetmap.org/#map=14/9.8787/-85.5316">Ver mapa más grande</a></small>
+							</div>
+						</div>
+						<div class="col-md-4 col-sm-4">
+							<!-- feature item -->
+							<div class="feature-item">
+								<!-- icon -->
+								<i class="fa fa-map-marker"></i>
+								<!-- heading -->
+								<h4>Here Maps</h4>
+								<p><a href="https://www.here.com/" target="_blank">here.com</a></p>
+							</br>
+								<!-- paragraph -->
+								<p>HERE WeGo es un servicio de navegación y mapas, operado por Here Technologies. Desarrollada originalmente por Nokia como HERE Maps, la aplicación de software se lanzó por primera vez para Windows Phone y World Wide Web en 2013.</p>
+                                </br> 
+                                <iframe width="300" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://image.maps.ls.hereapi.com/mia/1.6/mapview?c=9.8806%2C-85.5240&z=14&w=300&h=300&f=1&apiKey=xdpLTmXgmez_2_pzRYexnUFj3TfmVtoWfY1qK4p_4dg" style="border: 0px solid black"></iframe><br/><small><a href="https://www.openstreetmap.org/#map=14/9.8787/-85.5316">Ver mapa más grande</a></small>
+                            </div>
+                                
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<!-- subscribe block -->
+			<div class="subscribe">
+				<div class="container">
+					<div class="sub-content">
+						<div class="row">
+							<div class="col-md-6 col-sm-6">
+								<!-- subscribe update message -->
+								<div class="sub-message">
+									<!-- heading -->
+									<h3>Utiliza los mapas en tu sitio web!</h3>
+									<!-- paragraph -->
+									<p>La cartografía y los mapas se han convertido en parte esencial de nuestra vida, sobre todo debido a la invasión que diversos servicios y aplicaciones han realizado en sitios web y dispostivos móviles. </p>
+									<!-- paragraph -->
+									<p>Muchas de las empresas gigantes del sector tecnología como Google, Microsoft, Apple o Amazon quieren tener el control de los datos cartográficos en sus aplicaciones de mapas, porque esos datos ofrecen grandes posibilidades de ser <strong>rentables</strong> como herramientas de marketing.</p>
+									<p>Así pues, podemos poner en un mapa dónde están nuestros clientes actuales, la ubicación de nuestros <strong>establecimientos o sucursales</strong>, identificar nichos de mercado o áreas de cobertura, e incluso podemos incorporar un valor añadido  a los clientes indicando qué <strong>puntos de atracción</strong> pueden visitar o dónde comer por los alrededores de nuestro negocio.</p>
+									<p>Ponte en contacto hoy mismo para conocer más detalles de cómo incorporar esta fantástica tecnología en tu sitio web.</p>
+									<!-- update form  -->
+									<form onsubmit="enviar_ajax(); return false" id="form1">
+										<div class="input-group">
+											<input type="hidden" name="formulario" value="Formulario De Mapas">
+											<input type="text" id="email" name="email" class="form-control input-lg" placeholder="Tu correo">
+											<span class="input-group-btn">
+												<button class="btn btn-info btn-lg" type="submit">Contáctanos</button>
+											</span>
+										</div><!-- /input-group -->
+									</form>
+								</div>
+							</div>
+							<div class="col-md-6 col-sm-6">
+								<div class="embed-responsive-item">
+									<!-- <iframe class="embed-responsive-item" src="//www.youtube.com/embed/ZAqj3JWSN8M" frameborder="0" allowfullscreen></iframe> -->
+
+									<div style="padding:75% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/646691590?h=67c618010a&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&portrait=false&byline=false&title=false" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Sin t&amp;iacute;tulo"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+
+								</div>
+							</div>
+							
+							
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="feature">
+				<div class="container">
+				<div class="col-md-12 col-sm-12" align="center"><img src="img/banner.jpg" width="75%" height="75%" class="image-fluid">
+				</div>
+				</div>
+			</div>
+				<div class="feature">
+				<div class="container">
+					<div class="row">
+					<div class="col-md-12 col-sm-12">
+						<h4>Breve introducción</h4>
+				<div><p>Hoy en día existe un amplio número de alternativas a Google Maps, Open Street Maps y Here Maps, muchas de las cuales incluso pueden usarse offline. En ello, la gran ventaja de los mapas offline es que pueden utilizarse sin tener Internet, lo que permite ahorrar datos.
+					</p></br>
+					<p>A la hora de seleccionar un servicio de mapas también se debe tener en cuenta de dónde se obtiene el material cartográfico. Algunas supuestas alternativas se revelan como parte de Google y muchas de ellas utilizan mapas gratuitos como los del proyecto OpenStreetMap. Sin embargo, surgen diferencias con respecto a la funcionalidad y el precio. Casi todas las aplicaciones que te hemos presentado son nuestra selección y las que utilizamos en nuestros proyectos, pero siempre hay que tener presente que las funciones especiales y distintivas suelen ser de pago, y representan un costo adicional por concepto de licencia.
+					</p></br>
+					<p>En el mejor de los casos, los servicios de mapas no solo ofrecen el camino más adecuado en cada caso y direcciones y conexiones de transporte, sino que también registran tiendas, restaurantes y empresas. Google Maps, Open Street Maps y Here Maps muestran, en lo que nos concierne, hoteles, cines y cines, dónde se encuentra el servicio de parqueo o la sucursal bancaria más cercanos. Otros están especializados en ofrecerles la mejor combinación a conductores, ciclistas y senderistas para ir de A a B con todo lujo de detalles. Estos puntos y rutas pueden diferenciarse y personalizarse con iconos que destaquen nuestro negocio, tal y como muestran los mapas en los siguientes links. 
+					 	</p></br>
+						 <p><ul>
+							 <li><a href="mapaGooglePcompleta.html" target="_blank">Mapa con marcadores personalizados de Playa Sámara, Costa Rica, en Google Maps</a></li>
+							 <li><a href="https://albertosaenz.com/demos/maps/leaflet.html" target="_blank">Mapa con marcadores personalizados de Playa Sámara, Costa Rica, en Open Street Maps</a></li>
+							 <li><a href="mapaHerePcompleta.html" target="_blank">Mapa con marcadores personalizados de Playa Sámara, Costa Rica, en Here Maps</a></li>
+						 </ul></p>
+						<p>La variedad gráfica en cuanto a íconos es muy amplia. Por mostrar unos ejemplos: 
+					</p>
+					</div>
+				</div>
+				</div>
+			</div>
+				</div>
+				<div class="feature">
+					<div class="container">
+					<div class="col-md-12 col-sm-12" align="center"><img src="img/icons.jpg" class="image-fluid">
+					</div>
+					</div>
+				</div>
+				<div class="feature">
+					<div class="container">
+					<div class="col-md-12 col-sm-12" align="center"><img src="img/imagesIco.jpg" class="image-fluid">
+					</div>
+					</div>
+				</div>
+			<!-- footer above social block -->
+			<div class="footer-above">
+				
+				<div class="container">
+					
+					<!-- footer above main content -->
+					<div class="above-content">
+						<!-- testimonial content / paragraph -->
+						<p class="post">"Los mapas codifican el milagro de la existencia."</p>
+						<p><span>Nicholas Crane</span></p>
+						</br>
+						<!-- heading -->
+						<div class="social">
+							<h4>Contactos</h4>
+							<div class="single-icon">
+							  <i class="fa fa-mobile"></i>
+							  <p>
+								USA 1(640)500-1084<br>
+								LATAM (506)6252-1665<br>
+								<span>Lunes-Viernes (9am-5pm) CST</span>
+							  </p>
+							</div>
+						  </div>
+						  <div class="social">
+							<div class="single-icon">
+							  <i class="fa fa-envelope-o"></i>
+							  <p>
+								Email: contacto@albertosaenz.com<br>
+								<span>Web: www.albertosaenz.com</span>
+							  </p>
+							</div>
+						  </div>
+						<h4>Contacta mediante redes sociales</h4>
+						<div class="social">
+							<a href="https://www.facebook.com/ASdesarrolloweb" target="_blank"><i class="fa fa-facebook"></i></a>
+							<a href="https://twitter.com/MultihostE" target="_blank"><i class="fa fa-twitter"></i></a>
+							<a href="https://www.linkedin.com/in/david-alberto-233717227/" target="_blank"><i class="fa fa-linkedin"></i></a>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<!-- footer -->
+			<footer>
+				<div class="container">
+					<!--
+					<p c<!--lass="nav-link"><a href="#">Contact</a> &nbsp;|&nbsp; <a href="#">Downloads</a> &nbsp;|&nbsp; <a href="#">Email</a> &nbsp;|&nbsp; <a href="#">Support</a> &nbsp;|&nbsp; <a href="#">Privacy Policy</a></p>
+					
+					  -->
+					<p class="copy-right">Copyright &copy; 2021<a href="#">Alberto Sáenz</a> | Hosted By : <a href="https://multihostexpress.com/" target="_blank">Multi Host Express</a>, All rights reserved. </p>
+				</div>
+			</footer>
+			
+		</div>
+		
+		
+		<!-- Javascript files -->
+		<!-- jQuery -->
+		<script src="js/jquery.js"></script>
+		<!-- Bootstrap JS -->
+		<script src="js/bootstrap.min.js"></script>
+		<!-- Respond JS for IE8 -->
+		<script src="js/respond.min.js"></script>
+		<!-- HTML5 Support for IE -->
+		<script src="js/html5shiv.js"></script>
+		<!-- Custom JS -->
+		<script src="js/custom.js"></script>
+	</body>	
+</html>
